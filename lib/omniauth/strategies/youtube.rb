@@ -16,12 +16,12 @@ module OmniAuth
       
       info do
         prune!({
-          nickname: raw_info['author'].first['name']['$t'],
-          first_name: raw_info['yt$firstName']['$t'],
-          last_name: raw_info['yt$lastName']['$t'],
-          image: raw_info['media$thumbnail']['url'],
-          description: raw_info['yt$description']['$t'],
-          location: raw_info['yt$location']['$t']
+          nickname: raw_info['author'] && raw_info['author'].first['name'] && raw_info['author'].first['name']['$t'],
+          first_name: raw_info['yt$firstName'] && raw_info['yt$firstName']['$t'],
+          last_name: raw_info['yt$lastName'] && raw_info['yt$lastName']['$t'],
+          image: raw_info['media$thumbnail'] && raw_info['media$thumbnail']['url'],
+          description: raw_info['yt$description'] && raw_info['yt$description']['$t'],
+          location: raw_info['yt$location'] && raw_info['yt$location']['$t']
         })
       end
       
