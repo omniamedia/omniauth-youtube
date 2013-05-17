@@ -21,7 +21,8 @@ module OmniAuth
           last_name: raw_info['yt$lastName'] && raw_info['yt$lastName']['$t'],
           image: raw_info['media$thumbnail'] && raw_info['media$thumbnail']['url'],
           description: raw_info['yt$description'] && raw_info['yt$description']['$t'],
-          location: raw_info['yt$location'] && raw_info['yt$location']['$t']
+          location: raw_info['yt$location'] && raw_info['yt$location']['$t'],
+          username: raw_info['yt$username'] && raw_info['yt$username']['$t']
         })
       end
       
